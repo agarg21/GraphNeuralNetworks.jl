@@ -46,6 +46,7 @@ tutorials = "Tutorials" => [
     ]
 makedocs(;
     modules = [GraphNeuralNetworks, GNNGraphs, GNNlib],
+    draft = get(ENV, "DOCS_DRAFT", "false") == "true",
     plugins = [interlinks],
     format = Documenter.HTML(; mathengine, 
                             prettyurls = get(ENV, "CI", nothing) == "true", 
