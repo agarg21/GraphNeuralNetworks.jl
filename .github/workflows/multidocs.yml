@@ -36,6 +36,8 @@ jobs:
       - run: julia --color=yes --project=GNNLux/docs/ GNNLux/docs/make.jl
       - run: julia --project=GraphNeuralNetworks/docs/ -e 'using Pkg; Pkg.instantiate()'
       - run: julia --color=yes --project=GraphNeuralNetworks/docs/ GraphNeuralNetworks/docs/make.jl
+        env:
+          DOCS_DRAFT: 'true'
       # Compile multi docs
       - name: MultiDocs
         run: |
